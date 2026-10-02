@@ -1,0 +1,745 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.layar-dalam {
+  width: min(1000px, 90%);
+  margin: 0 auto;
+}
+
+.layar-penuh {
+  width: 100%;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  min-height: 60px;
+
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+nav.putih {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+nav .layar-dalam {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo a {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+nav .logo img.hitam {
+  display: none;
+}
+
+nav.putih .logo img.putih {
+  display: none;
+}
+
+nav.putih .logo img.hitam {
+  display: block;
+}
+
+/* =========================
+   MENU
+========================= */
+
+nav .menu {
+  display: flex;
+  align-items: center;
+}
+
+nav .menu ul {
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+nav .menu ul li {
+  margin: 0;
+}
+
+nav .menu ul li a {
+  display: block;
+
+  padding: 20px 16px;
+
+  color: #fff;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+nav.putih .menu ul li a {
+  color: #333;
+}
+
+nav .menu ul li a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.tombol-menu {
+  display: none;
+
+  width: 30px;
+  height: 22px;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-decoration: none;
+}
+
+.tombol-menu .garis {
+  width: 100%;
+  height: 3px;
+
+  background-color: #fff;
+  border-radius: 10px;
+
+  transition: background-color 0.3s ease;
+}
+
+nav.putih .tombol-menu .garis {
+  background-color: #333;
+}
+
+/* =========================
+   HERO
+========================= */
+
+header {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+header video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: -2;
+}
+
+header .overlay {
+  position: absolute;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  z-index: -1;
+}
+
+header .intro {
+  position: relative;
+
+  width: min(800px, 90%);
+
+  color: #fff;
+
+  z-index: 1;
+}
+
+header .intro h1 {
+  margin: 0 0 15px;
+
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+header .intro p {
+  margin: 10px 0;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.tombol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 24px;
+
+  color: #fff;
+  background-color: #c86b85;
+
+  border-radius: 6px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.tombol:hover {
+  background-color: #b85873;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  padding: 80px 0;
+}
+
+section h2 {
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+
+section h2::after {
+  content: "";
+
+  display: block;
+
+  width: 52px;
+  height: 5px;
+
+  margin: 20px auto;
+
+  background-color: #c86b85;
+}
+
+#aboutus,
+#team,
+#blog {
+  text-align: center;
+}
+
+section p.ringkasan {
+  max-width: 700px;
+
+  margin: 0 auto 30px;
+
+  color: #999;
+
+  font-size: 18px;
+  font-style: italic;
+}
+
+section .konten-isi {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section .konten-isi p {
+  margin: 0;
+  font-style: normal;
+}
+
+/* =========================
+   GRAY SECTION
+========================= */
+
+section.abuabu {
+  background-color: #f5f6f6;
+}
+
+/* =========================
+   SUPPORT
+========================= */
+
+.support,
+.tim,
+.blog {
+  display: flex;
+  gap: 30px;
+}
+
+.support {
+  justify-content: space-between;
+}
+
+.support > div {
+  width: 30%;
+  text-align: center;
+}
+
+.support img {
+  width: 50px;
+  height: auto;
+}
+
+.support h3,
+.tim h3 {
+  margin: 20px 0 10px;
+
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.support p {
+  margin: 0;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+section#gallery {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 10px;
+
+  padding: 10px;
+
+  overflow: hidden;
+}
+
+section#gallery div {
+  overflow: hidden;
+}
+
+section#gallery div img {
+  display: block;
+
+  width: 100%;
+  height: 180px;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+
+  transition: transform 0.3s ease;
+}
+
+section#gallery div img:hover {
+  transform: scale(1.08);
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+section.quote {
+  min-height: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 20px;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("asset/background-bromo.jpg") center / cover no-repeat;
+
+  background-attachment: fixed;
+
+  color: #fff;
+
+  text-align: center;
+}
+
+section.quote blockquote {
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  padding: 30px;
+
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-style: italic;
+}
+
+/* =========================
+   TEAM
+========================= */
+
+.tim {
+  justify-content: space-between;
+}
+
+.tim > div {
+  width: 30%;
+  text-align: center;
+}
+
+.tim img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tim span {
+  color: #777;
+}
+
+/* =========================
+   BLOG
+========================= */
+
+.blog {
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.blog .area {
+  width: 48%;
+
+  display: flex;
+
+  overflow: hidden;
+
+  background-color: #fff;
+
+  border-radius: 8px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.blog .area .gambar,
+.blog .area .text {
+  width: 50%;
+}
+
+.blog .area .gambar {
+  min-height: 300px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.blog .area .text {
+  display: flex;
+  align-items: center;
+}
+
+.blog .area .text article {
+  width: 100%;
+  padding: 30px;
+  text-align: left;
+}
+
+.blog .area .text h3 {
+  margin: 0 0 15px;
+
+  font-size: 20px;
+}
+
+.blog .area .text h3::after {
+  display: none;
+}
+
+.blog .area .text a {
+  color: #333;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.blog .area .text a:hover {
+  color: #c86b85;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 60px 0 40px;
+
+  background-color: #343a40;
+
+  color: #fff;
+}
+
+footer .layar-dalam {
+  display: flex;
+
+  gap: 30px;
+
+  justify-content: space-between;
+}
+
+footer .layar-dalam > div {
+  width: 22%;
+}
+
+footer h2 {
+  margin: 0 0 15px;
+
+  font-size: 20px;
+}
+
+footer p {
+  margin: 0;
+
+  color: #ccc;
+}
+
+footer .copyright {
+  width: 100% !important;
+
+  margin-top: 40px;
+  padding-top: 30px;
+
+  border-top: 1px solid #666;
+
+  text-align: center;
+
+  color: #ccc;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (max-width: 991.98px) {
+  .layar-dalam {
+    width: 90%;
+  }
+
+  nav .menu ul {
+    display: none;
+
+    position: absolute;
+    top: 60px;
+    left: 0;
+
+    width: 100%;
+
+    flex-direction: column;
+
+    background-color: #fff;
+  }
+
+  nav .menu ul li {
+    width: 100%;
+
+    border-bottom: 1px solid #eee;
+
+    text-align: center;
+  }
+
+  nav .menu ul li a {
+    padding: 14px;
+
+    color: #333;
+  }
+
+  .tombol-menu {
+    display: flex;
+  }
+
+  .support {
+    gap: 40px;
+  }
+
+  .support > div {
+    width: 33.333%;
+  }
+
+  .blog {
+    flex-direction: column;
+  }
+
+  .blog .area {
+    width: 100%;
+  }
+
+  footer .layar-dalam {
+    flex-wrap: wrap;
+  }
+
+  footer .layar-dalam > div {
+    width: 45%;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 600px) {
+  section {
+    padding: 60px 0;
+  }
+
+  header {
+    min-height: 550px;
+  }
+
+  header .intro h1 {
+    font-size: 2.5rem;
+  }
+
+  section#gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section#gallery div img {
+    height: 140px;
+  }
+
+  .support,
+  .tim {
+    flex-direction: column;
+  }
+
+  .support > div,
+  .tim > div {
+    width: 100%;
+  }
+
+  .tim {
+    gap: 40px;
+  }
+
+  .blog .area {
+    flex-direction: column;
+  }
+
+  .blog .area .gambar,
+  .blog .area .text {
+    width: 100%;
+  }
+
+  .blog .area .gambar {
+    min-height: 220px;
+  }
+
+  .blog .area .text article {
+    padding: 25px;
+  }
+
+  section.quote {
+    background-attachment: scroll;
+  }
+
+  footer .layar-dalam {
+    flex-direction: column;
+  }
+
+  footer .layar-dalam > div {
+    width: 100%;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
